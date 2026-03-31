@@ -287,8 +287,9 @@ img {
 }
 
 .ticker-track {
-    display: inline-block;
-    animation: ticker 20s linear infinite;
+    display: flex;
+    width: max-content;
+    animation: ticker 40s linear infinite;
 }
 
 /* Split Layout */
