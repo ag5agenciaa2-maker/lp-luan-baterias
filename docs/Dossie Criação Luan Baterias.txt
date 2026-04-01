@@ -1,0 +1,180 @@
+Quero que você crie o Site institucional "Voltage Split" em 3 arquivos (index.html, style.css e script.js), usando APENAS HTML5 semântico, CSS3 (Flexbox, Grid, variáveis CSS) e JavaScript Vanilla ES6, sem qualquer framework ou biblioteca externa.
+REGRA: Use imagens genéricas premium (Unsplash) relacionadas ao nicho caso não haja imagens reais. Inclua URLs diretas das imagens.
+IDENTIDADE VISUAL BASE:
+Paleta: #0A0A0A (fundo primário), #111111 (fundo secundário), #FFCC00 (amarelo elétrico principal), #E8A800 (amarelo escuro/hover), #FFFFFF (texto principal), #888888 (texto secundário)
+Tipografia: Barlow Condensed (títulos/impacto, peso 700–900), Inter (corpo, peso 400–500)
+Estilo: Dark Power Automotive — industrial, energético, direto, sem frescura
+Sensação: Força, rapidez, confiança, energia — "a bateria do seu carro em boas mãos"
+LAYOUT ESCOLHIDO:
+Hero: B) Fullscreen — titular em bold gigante 7–9vw alinhado à esquerda sobre imagem de carro com bateria iluminada em amarelo, camada escura semitransparente; CTA WhatsApp em amarelo + CTA "Ver Serviços" em outline branco lado a lado; raio/bolt decorativo amarelo animado no fundo (elemento SVG)
+Serviços: F) Numeração grande (01, 02, 03…) como elemento visual dominante em amarelo semitransparente, com título do serviço à frente e linha descritiva abaixo; layout em lista vertical com hover revelando descrição completa
+Depoimentos: A) Marquee infinito horizontal — cards compactos deslizando continuamente, com nota em estrelas, nome e trecho da avaliação; logo Google visível no início do track
+Sobre/Credenciais: A) Counters animados + texto curto — "228+ Avaliações", "4.8★ no Google", "Desde 2009", "Entrega em domicílio"
+ANIMAÇÕES DO PROJETO:
+
+Logo → opacity 0 para 1 em 600ms, easing: ease-out, trigger: load
+Headline hero → translateY(40px) opacity 0 para translateY(0) opacity 1 em 800ms, easing: cubic-bezier(0.16,1,0.3,1), trigger: load, delay: 200ms
+CTAs hero → translateY(20px) opacity 0 para estado final em 700ms, trigger: load, delay: 500ms, stagger: 150ms
+Bolt SVG decorativo → pulsa scale(1) para scale(1.08) em 2000ms, easing: ease-in-out, trigger: load, loop infinito
+Números dos serviços → translateX(-30px) opacity 0 para estado final em 600ms, easing: ease-out, trigger: IntersectionObserver (threshold 0.2), stagger: 120ms por item
+Counters (sobre) → count up de 0 ao valor final em 1800ms, easing: easeOutExpo, trigger: IntersectionObserver
+Cards depoimentos → marquee CSS animation translateX(0) para translateX(-50%) em 30s, linear, loop infinito, pausa no hover
+Barra animada horizontal → translateX(0) loop contínuo em 20s, linear, nome/serviços/área alternando com separador • amarelo
+Seções de conteúdo → translateY(30px) opacity 0 para estado final em 700ms, easing: ease-out, trigger: IntersectionObserver, stagger: sim
+
+SEÇÕES OBRIGATÓRIAS:
+
+Navbar
+Hero [Voltage Split Fullscreen]
+Seção de alto impacto: dor e solução do público-alvo
+Serviços/Produtos — numeração grande 01–08
+Barra animada horizontal: LUAN BATERIAS · Santa Cruz RJ · Entrega em Domicílio · Teste Grátis · Parceira Moura & Heliar
+Seção de encantamento com imagens de resultado/segurança/pessoas
+Sobre/Credenciais — counters animados
+Depoimentos — marquee Google
+FAQ
+Localização: endereço + mapa + botão "Como Chegar" + contatos e redes sociais
+CTA com formulário ao lado
+Rodapé + Créditos
+
+RODAPÉ — coluna de contato (com ícones, todos clicáveis):
+Nome → link Google Business: https://share.google/N2wtclOzfbANNFamp
+Endereço → link Google Maps rota: R. do Império, 166 - Santa Cruz, Rio de Janeiro - RJ, 23555-024
+Telefone: (21) 3305-2797
+WhatsApp: (21) 97744-9687 → https://wa.me/5521977449687
+CRÉDITOS:
+Esquerda: © Luan Baterias 2026
+Direita: Desenvolvido por AG5 Agência (AG5 em destaque na cor #FFCC00, link para www.ag5agencia.com.br)
+DIRETRIZES ANTI-GENÉRICO:
+
+Sem cards retangulares padrão com bordas curvas iguais
+Sem hero centralizado com fundo escuro e texto branco genérico
+Sem fade-up igual em todas as seções
+Sem paleta azul + branco + cinza
+Sem 3 colunas de ícone + título + texto
+
+QUALIDADE DE CÓDIGO:
+
+HTML semântico + IDs de ancoragem em todas as seções
+Variáveis CSS no :root para cores, fontes e espaçamentos
+Mobile-first com media queries
+IntersectionObserver para animações de scroll (nunca scroll event direto)
+will-change: transform, @media (prefers-reduced-motion), lazy loading
+Formulário com validação real
+
+OPCIONAL (aplicar):
+
+Barra animada horizontal: LUAN BATERIAS · SANTA CRUZ · ENTREGA RÁPIDA · TESTE GRÁTIS · PARCEIRA MOURA
+Seção de avaliações Google com logo oficial e cards animados (marquee)
+
+
+1 — MÍDIAS PRINCIPAIS
+MídiaStatusLogo da empresa✅ Disponível (fundo preto, LUAN + raio amarelo + BATERIAS dourado)Foto da fachada❌ Ausente — ir para checklistFotos internas da loja❌ AusenteFotos da equipe❌ AusenteFoto do proprietário❌ Ausente (mascote cartoon identificado no Instagram, não é foto real)Imagens dos produtos (baterias)❌ Ausente — usar UnsplashPosts Instagram disponíveis✅ 2 posts visíveis (arte com mascote + carro Onix com bateria)
+
+2 — INFORMAÇÕES DA EMPRESA
+Nome da empresa: Luan Baterias Automotivas em Santa Cruz
+(nota: anteriormente operava como "Cleber Baterias" — rebranding confirmado em março/2026)
+Nicho de atuação: Comércio especializado em baterias automotivas e serviços relacionados
+Descrição institucional: "A Luan Baterias é uma loja especializada em baterias automotivas em Santa Cruz, Rio de Janeiro. Desde 2009, referência no mercado de bateria automotiva."
+Proposta de valor: Baterias de qualidade com entrega rápida em domicílio, instalação no local, teste gratuito de bateria e alternador, e atendimento ágil com compras pelo WhatsApp.
+Público-alvo: Motoristas de carros, motos e caminhões na região de Santa Cruz (RJ) que precisam de troca emergencial, manutenção preventiva ou entrega rápida sem sair de casa.
+Principais serviços:
+
+Troca de Bateria
+Instalação de Bateria
+Manutenção de Bateria
+Recarga de Bateria
+Teste de Bateria (GRÁTIS)
+Teste de Alternador (GRÁTIS)
+
+Principais produtos:
+
+Baterias Moura (parceira oficial)
+Baterias Heliar
+Baterias para Carro / Moto / Caminhão
+Baterias Estacionárias
+Água para Bateria
+
+Diferenciais:
+
+Entrega em domicílio com instalação no local
+Teste de bateria e alternador grátis
+Compra 100% pelo WhatsApp sem sair de casa
+Diagnóstico com transparência (mostram ferramenta ao cliente)
+Atendimento desde 2009 (tradição e confiança)
+Parceira oficial Moura
+
+Contato:
+
+Telefone: (21) 3305-2797
+WhatsApp: (21) 97744-9687 → https://wa.me/5521977449687
+Endereço: R. do Império, 166 - Santa Cruz, Rio de Janeiro - RJ, CEP 23555-024
+
+Horário de funcionamento:
+
+Segunda a Sexta: 8h às 18h
+Sábado: 8h às 15h
+Domingo: Fechado
+Feriados: 8h30 às 12h
+
+Redes sociais e links:
+
+Instagram: https://www.instagram.com/luanbateriasoficial
+Facebook: https://www.facebook.com/luanbaterias/
+Google Business: https://share.google/N2wtclOzfbANNFamp
+WhatsApp link direto: https://wa.me/5521977449687
+
+Site atual: Não possui
+Documentação: CNPJ não informado | Sem registro profissional aplicável ao nicho
+
+3 — AVALIAÇÕES
+Plataforma: Google Maps
+Total de avaliações: 228
+Nota média: ⭐ 4,8
+NomeTempoEstrelasAvaliaçãoThiago Roque7 meses atrás⭐⭐⭐⭐⭐Nota 1000! Entrei em contato as 8h da manhã solicitando uma bateria Moura para entregar e as 9h o Profissional já estava no endereço de destino pronto, instalou a bateria nova com toda calma e educação e ainda me ajudou a remover um Borne que estava com zinabre. Indico 100% o Cléber Baterias. Preço muito bom! Voltarei a fazer negócio quando necessitar!Rodrigo Lima6 meses atrás⭐⭐⭐⭐⭐Excelente atendimento, muito competentes e extremamente profissionais. Bons preços e principalmente tradição e confiabilidade. Sou cliente a mais de 10 anos.Vania de Paula2 meses atrás⭐⭐⭐⭐⭐Já compro na empresa há muito tempo, e gosto demais do atendimento, já experimentei por duas vezes o serviço de entrega, e a entrega é rápida e o rapaz muito atencioso. Obrigado!Ediel Gonçalves1 mês atrás⭐⭐⭐⭐⭐Excelente atendimento, educação e agilidade. O preço também é muito bom.Nelson Antonio5 meses atrás⭐⭐⭐⭐⭐Muito bom o atendimento, fiz a compra através do WhatsApp, sem sair de casa, entrega super rápida.gabriel crespo3 meses atrás⭐⭐⭐⭐⭐excelente profissionais, comprei uma bateria há alguns anos, e sempre que precisei testar ou recarregar deram uma moral por ser cliente, quando tiver que trocar, será aqui!Priscila Boy Nutricionista3 meses atrás⭐⭐⭐⭐⭐Ótimo atendimento! Só troco a bateria do meu carro com eles. Recomendo!Paulo Santos9 meses atrás⭐⭐⭐⭐⭐Estive hoje no estabelecimento. Gostei do atendimento. Opções e bons preços de marcas de bateria. E ótimas condições de pagamento.wenerson luiz5 meses atrás⭐⭐⭐⭐⭐Diagnosticaram o defeito com rapidez e qualidade, estava em dúvida do alternador e a bateria, vieram com uma ferramenta me mostraram com total transparência, obrigado aos envolvidos.
+
+4 — ANÁLISE DE BRANDING
+Nicho: Comércio especializado em baterias automotivas / serviços automotivos de emergência
+Posicionamento: Médio-popular com identidade visual de força — accesível no preço, mas comunicação confiante e energética
+Estilo visual predominante: Dark Power Automotive — dominância preta com acento elétrico amarelo, tipografia condensed bold, energia visual direta, sem ornamentos
+Paleta de cores recomendada:
+UsoCorHexFundo primárioPreto profundo#0A0A0AFundo secundárioPreto grafite#111111Acento principalAmarelo elétrico#FFCC00Acento hoverAmarelo ouro#E8A800Texto principalBranco#FFFFFFTexto secundárioCinza claro#999999Separadores/bordasCinza escuro#2A2A2A
+Direção estética: Industrial elétrica — como se a identidade visual fosse a própria descarga de energia de uma bateria: rápida, potente, sem enrolação. Elementos gráficos angulares, raio como ícone recorrente, tipografia condensed agressiva, fotos em dark mode ou com overlay.
+Sensação de marca: "Confiança que liga seu carro. Na hora que você precisa."
+Referências de empresas do mesmo nicho com identidade visual similar:
+
+Moura Baterias (parceira) — preto/amarelo, industrial, confiança
+Heliar — identidade forte com acento colorido
+Baterias Mac — visual energético
+Mr. Wash / Lube Stop — serviço rápido, dark theme, alto impacto visual
+
+
+TEMPLATE 3 — Motorio · https://motorio.webflow.io
+
+HERO: Split editorial com headline em grande na esquerda (bold, multi-linha) + imagem de carro/banner à direita, fundo escuro com textura sutil. Diferenciador: label animada girando tipo "Introducing" antes do headline. NAV: Dark, logo centralizado ou à esquerda, "Get In Touch" button à direita em contraste. TIPOGRAFIA: Mix de sans-serif e condensed, numeração de serviços em ~4rem semitransparente, category tag em uppercase pequeno abaixo do título de serviço. CORES (aplicar Luan): #0D0D0D bg, #FFCC00 accent text e bordas, tag de categoria em amarelo translúcido. SERVIÇOS/CARDS: Grid 2x3 com cards de imagem de fundo preenchendo o card inteiro, número grande (1–6) em top-left, título no bottom-left em bold branco, category tag abaixo. ANIMAÇÕES:
+
+
+
+
+
+Counters animados (252+ clientes, 900+ projetos) → count up 2000ms, easing ease-out, scroll trigger
+
+
+
+Team cards → hover revela nome + cargo com translateY(0) de translateY(20px) em 300ms
+
+
+
+Marquee bar — "EXCELLENCE IN AUTOMOTIVE SERVICE SINCE 1996" → translateX loop 20s linear
+
+
+
+Gallery images → scale 1.03 no hover em 400ms MICRO-INTERAÇÕES: Team hover com name reveal; gallery grid com lightbox; pricing card de destaque com border amarela animada. ELEMENTOS DECORATIVOS: Elemento SVG decorativo circular ("peatan") posicionado como marca-d'água; linha horizontal com texto grande e muted "EXCELLENCE" em background watermark text. RESUMO CONSTRUTIVO: Para recriar: service grid usa CSS Grid grid-template-columns: repeat(3, 1fr) + cards com position: relative; overflow: hidden + imagem como background-image no pseudo-element ou <img> com object-fit: cover. Número em position: absolute; top: 1rem; left: 1rem; font-size: 3rem; opacity: 0.4; color: #FFCC00. Marquee usa @keyframes marquee com translateX(-50%) sobre duplicação de conteúdo.
+
+
+
+7 — SISTEMA DE VARIAÇÃO DE LAYOUT
+
+Escolhas registradas para o site Luan Baterias:
+
+SeçãoEscolhaJustificativaHEROB) Fullscreen + H) Fundo: foto de carro/bateria com overlay escuro e glow amareloFullscreen transmite força; foto real de bateria contextualiza imediatamente o negócio; glow amarelo referencia a marcaSERVIÇOSF) Numeração grande (01, 02, 03…)Cria hierarquia visual sem precisar de imagens; número em amarelo semitransparente é elemento de design; funciona bem em dark themeDEPOIMENTOSA) Marquee infinito horizontalMarca com 228 avaliações 4.8★ — o volume impressiona; marquee exibe quantidade e qualidade simultaneamente; energia contínuaSOBRE/CREDENCIAISA) Counters animados + texto curto"228 avaliações", "4.8★", "desde 2009", "entrega em domicílio" — 4 contadores impactantes que valem mais que um parágrafo
