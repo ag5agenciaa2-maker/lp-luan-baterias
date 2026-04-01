@@ -20,6 +20,8 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
     <meta property="og:site_name" content="Luan Baterias">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="AG5 Agência">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
@@ -33,18 +35,18 @@
     <meta name="geo.position" content="-22.91496760;-43.68764940">
     <meta name="ICBM" content="-22.91496760, -43.68764940">
 
-    <!-- Preload de Recursos Críticos -->
-    <link rel="preload" href="assests/video-baterias-automotivas-santa-cruz-rj.mp4" as="video">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    
-    <!-- PageSpeed fix: preload CSS para eliminar render-blocking (FCP/LCP) -->
-    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
-    <link rel="preload" href="cookie-banner.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="cookie-banner.css"></noscript>
     <link rel="icon" type="image/x-icon" href="assests/icon-luan-baterias-loja-de-baterias-santa-cruz-rj.webp.ico">
+
+    <!-- CSS Crítico Inline (Navbar & Hero) para zerar CLS e FOUC -->
+    <style>
+        :root { --bg-primary: #0A0A0A; --accent: #FFCC00; --text-primary: #FFFFFF; --font-display: 'Barlow Condensed', sans-serif; }
+        body { background: var(--bg-primary); margin:0; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        .hero { height: 100vh; height: 100svh; background: var(--bg-primary); position: relative; display: flex; align-items: center; overflow: hidden; contain: layout; }
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 20px 0; background: transparent; height: 85px; }
+        .nav-container { width: 90%; max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 45px; width: auto; aspect-ratio: 180/45; }
+        .ticker-bar { min-height: 52px; background: var(--accent); }
+    </style>
 
     <!-- Schema.org JSON-LD — @graph unificado AG5 v2.2 -->
     <script type="application/ld+json">
@@ -286,16 +288,19 @@
 
       ]
     }
-    </script>
+    <!-- Preload das Fontes para evitar FOUT -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500&display=swap" as="style">
+    <link rel="preload" href="assests/video-baterias-automotivas-santa-cruz-rj.mp4" as="video">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="cookie-banner.css">
 </head>
 
 <body>
     <nav id="navbar" class="navbar">
         <div class="container nav-container">
             <a href="#" class="logo">
-                <!-- PageSpeed fix: width/height para evitar CLS -->
                 <img src="assests/logo-luan-baterias-loja-de-baterias-santa-cruz-rj.webp" alt="Luan Baterias"
-                    class="logo-img" width="180" height="45">
+                    class="logo-img" width="180" height="45" fetchpriority="high">
             </a>
             <ul class="nav-links">
                 <li><a href="#hero">Início</a></li>
@@ -304,7 +309,7 @@
                 <li><a href="#depoimentos">Avaliações</a></li>
                 <li><a href="#contato" class="btn btn-outline">Fale Conosco</a></li>
             </ul>
-            <button class="mobile-menu-btn" aria-label="Abri Menu Lateral">
+            <button class="mobile-menu-btn" aria-label="Abrir Menu Lateral">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -315,7 +320,7 @@
 
     <header id="hero" class="hero">
         <div class="hero-bg">
-            <video autoplay muted loop playsinline class="hero-video">
+            <video autoplay muted loop playsinline preload="metadata" class="hero-video">
                 <source src="assests/video-baterias-automotivas-santa-cruz-rj.mp4" type="video/mp4">
                 Seu navegador não suporta vídeos.
             </video>
@@ -407,7 +412,8 @@
             </div>
             <div class="impact-image reveal">
                 <img src="assests/carro_parado_problema_bateria.png"
-                    alt="Carro parado com problemas de bateria na estrada" width="600" height="450" loading="lazy" referrerPolicy="no-referrer">
+                    alt="Carro parado com problemas de bateria na estrada" width="600" height="450" loading="lazy" decoding="async" referrerpolicy="no-referrer"
+                    style="content-visibility: auto; contain-intrinsic-size: 600px 450px;">
             </div>
         </div>
     </section>
@@ -555,7 +561,7 @@
                     alt="Instalação de bateria automotiva em domicílio pela Luan Baterias" width="400" height="400" loading="lazy"></div>
             <div class="gallery-item reveal"><img
                     src="assests/baterias-luan-baterias-loja-de-baterias-santa-cruz-rj%20(6).webp"
-                    alt="Loja Luan Baterias em Santa Cruz, Rio de Janeiro" width="400" height="400" loading="lazy"></div>
+                    alt="Loja Luan Baterias em Santa Cruz, Rio de Janeiro" width="400" height="400" loading="lazy" decoding="async"></div>
         </div>
     </section>
 
@@ -962,7 +968,7 @@
                 <div class="footer-col">
                     <a href="#" class="logo">
                         <img src="assests/logo-luan-baterias-loja-de-baterias-santa-cruz-rj.webp" alt="Luan Baterias"
-                            class="logo-img">
+                            class="logo-img" width="180" height="45" loading="lazy" decoding="async">
                     </a>
                     <p class="mt-2">Referência em baterias automotivas em Santa Cruz desde 2009. Qualidade e confiança
                         para o seu veículo.</p>
@@ -1114,7 +1120,7 @@
     <script src="script.js"></script>
 
     <!-- ========== COOKIE BANNER UNIVERSAL (AG5) ========== -->
-    <div id="ck-banner" class="ck-banner" role="dialog" aria-modal="true" aria-label="Aviso de cookies"
+    <div id="ck-banner" class="ck-banner" role="region" aria-modal="true" aria-label="Aviso de Privacidade e Cookies"
         aria-live="polite" aria-hidden="true">
         <div class="ck-banner__inner">
             <div class="ck-banner__content">

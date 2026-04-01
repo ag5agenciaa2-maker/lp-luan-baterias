@@ -52,6 +52,8 @@ ul {
 img {
     max-width: 100%;
     display: block;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
 }
 
 .container {
@@ -153,7 +155,8 @@ img {
 
 .logo-img {
     height: 45px;
-    width: auto;
+    width: 180px;
+    aspect-ratio: 180 / 45;
     object-fit: contain;
 }
 
@@ -270,7 +273,7 @@ img {
     line-height: 0.9;
     margin-bottom: 20px;
     opacity: 0;
-    transform: translateY(40px);
+    transform: translate3d(0, 40px, 0);
 }
 
 .hero-subtitle {
@@ -283,7 +286,7 @@ img {
     color: var(--text-primary);
     line-height: 1.6;
     opacity: 0;
-    transform: translateY(40px);
+    transform: translate3d(0, 40px, 0);
 }
 
 .hero-ctas {
@@ -291,7 +294,7 @@ img {
     flex-wrap: wrap;
     gap: 20px;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translate3d(0, 20px, 0);
 }
 
 .hero-ctas .btn {
@@ -340,6 +343,9 @@ img {
     font-weight: 900;
     font-size: 1.2rem;
     text-transform: uppercase;
+    min-height: 52px; /* Garante espaço reservado antes da renderização do texto */
+    display: flex;
+    align-items: center;
 }
 
 .ticker-track {
@@ -522,6 +528,7 @@ img {
     border: 1px solid var(--border);
     margin-bottom: 25px;
     width: fit-content;
+    height: 60px; /* Altura reservada */
     animation: fadeIn 0.8s ease-out;
 }
 
@@ -559,6 +566,7 @@ img {
 .marquee-testimonials {
     padding: 40px 0;
     background: var(--bg-secondary);
+    min-height: 300px; /* Evita colapso do layout */
 }
 
 .marquee-track {
@@ -603,6 +611,8 @@ img {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 500px;
 }
 
 .faq-item {
@@ -702,6 +712,8 @@ img {
 .location-map {
     height: 450px;
     filter: grayscale(1) invert(0.9);
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 450px;
 }
 
 /* Contact Form */
@@ -1047,13 +1059,14 @@ img {
 
 .reveal {
     opacity: 0;
-    transform: translateY(30px);
-    transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: translate3d(0, 30px, 0); /* Aceleração por hardware */
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
 }
 
 .reveal.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
 }
 
 .animate-on-load.active {
