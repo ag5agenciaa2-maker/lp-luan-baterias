@@ -1,13 +1,13 @@
-/* Configuração do Design System Nohana Quintanilha Advocacia */
+/* Configuração do Design System Luan Baterias */
 :root {
-    --brand-main: #6B1728;
-    --brand-hover: #C9993A;
+    --brand-main: #FFCC00;
+    --brand-hover: #E8A800;
     --brand-accent: #27272a;
     --brand-dark: #ffffff;
     --brand-gray: #a1a1aa;
-    --brand-light: #050505; /* Deeper black */
+    --brand-light: #0A0A0A; /* Deeper black */
     --whatsapp-color: #25D366;
-    --bg-color: #050505;
+    --bg-color: #0A0A0A;
     --text-color: #ffffff;
     --card-bg: #111111;
     --border-color: rgba(255, 255, 255, 0.08);
@@ -169,13 +169,13 @@ textarea,
 }
 
 body.dark-mode {
-    --brand-main: #6B1728;
-    --brand-hover: #C9993A;
+    --brand-main: #FFCC00;
+    --brand-hover: #E8A800;
     --brand-accent: #1a1a1a;
     --brand-dark: #ffffff;
     --brand-gray: #9ca3af;
-    --brand-light: #050505;
-    --bg-color: #050505;
+    --brand-light: #0A0A0A;
+    --bg-color: #0A0A0A;
     --text-color: #f9fafb;
     --card-bg: #0d0d0d;
     --border-color: rgba(255, 255, 255, 0.06);
@@ -183,8 +183,8 @@ body.dark-mode {
 
 /* Light Mode */
 body.light-mode {
-    --brand-main: #6B1728;
-    --brand-hover: #B88A2E;
+    --brand-main: #D4A800;
+    --brand-hover: #B89000;
     --brand-accent: #e4e4e7;
     --brand-dark: #18181b;
     --brand-gray: #52525b;
@@ -278,7 +278,7 @@ body.light-mode [class*="border-white/10"] {
 }
 
 body.light-mode [class*="border-brand-main"] {
-    border-color: #6B1728 !important;
+    border-color: #D4A800 !important;
 }
 
 /* Fundos com opacidade branca → opacidade escura */
@@ -316,7 +316,7 @@ body.light-mode .shadow-lg {
 }
 
 body.light-mode [class*="shadow-brand-main"] {
-    box-shadow: 0 4px 16px -4px rgba(107, 23, 40, 0.15) !important;
+    box-shadow: 0 4px 16px -4px rgba(255, 204, 0, 0.15) !important;
 }
 
 /* Glassmorphism */
@@ -417,7 +417,7 @@ body.light-mode footer a.opacity-30:hover {
 
 /* Gradientes de hero */
 body.light-mode [class*="from-brand-main"] {
-    --tw-gradient-from: rgba(107, 23, 40, 0.06) !important;
+    --tw-gradient-from: rgba(255, 204, 0, 0.06) !important;
 }
 
 /* Micro-labels e opacidades */
@@ -454,14 +454,14 @@ body.light-mode a.bg-brand-main i {
 }
 
 /* Botão WhatsApp gradiente — manter texto branco */
-body.light-mode [class*="from-[#6B1728]"] {
-    color: #ffffff !important;
+body.light-mode [class*="from-[#FFCC00]"] {
+    color: #0A0A0A !important;
 }
 
-body.light-mode [class*="from-[#6B1728]"] span,
-body.light-mode [class*="from-[#6B1728]"] i,
-body.light-mode [class*="from-[#6B1728]"] div {
-    color: #ffffff !important;
+body.light-mode [class*="from-[#FFCC00]"] span,
+body.light-mode [class*="from-[#FFCC00]"] i,
+body.light-mode [class*="from-[#FFCC00]"] div {
+    color: #0A0A0A !important;
 }
 
 body.light-mode .pulse-custom-slow span,
@@ -488,7 +488,7 @@ body.light-mode [class*="bg-black/40"] {
     background-color: #ffffff !important;
     backdrop-filter: none !important;
     border: 2px solid var(--brand-main) !important;
-    box-shadow: 0 2px 12px rgba(107, 23, 40, 0.08) !important;
+    box-shadow: 0 2px 12px rgba(255, 204, 0, 0.08) !important;
 }
 
 /* Pill de categoria do hero — light mode: sem borda, fundo suave */
@@ -546,9 +546,9 @@ body.dark-mode::before {
 
 /* Tipografia */
 .font-serif {
-    font-family: 'Cormorant Garamond', serif;
-    letter-spacing: -0.015em;
-    line-height: 1.15;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
 }
 
 h1,
@@ -633,7 +633,7 @@ h3 {
 
 .hover-lift:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px -15px rgba(107, 23, 40, 0.4);
+    box-shadow: 0 20px 40px -15px rgba(255, 204, 0, 0.4);
 }
 
 /* Fade Up Entry */
@@ -652,17 +652,17 @@ h3 {
 @keyframes pulse-ring {
     0% {
         transform: scale(0.98);
-        box-shadow: 0 0 0 0 rgba(107, 23, 40, 0.5);
+        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.5);
     }
 
     70% {
         transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(107, 23, 40, 0);
+        box-shadow: 0 0 0 10px rgba(255, 204, 0, 0);
     }
 
     100% {
         transform: scale(0.98);
-        box-shadow: 0 0 0 0 rgba(107, 23, 40, 0);
+        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
     }
 }
 
@@ -680,25 +680,25 @@ body.dark-mode .modal-content {
 }
 
 body.dark-mode [class*="bg-[#18181b]"]:hover {
-    border-color: rgba(107, 23, 40, 0.3) !important;
-    box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(107, 23, 40, 0.1) !important;
+    border-color: rgba(255, 204, 0, 0.3) !important;
+    box-shadow: 0 25px 50px -20px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 204, 0, 0.1) !important;
 }
 
 /* Music Toggle Animations */
 @keyframes pulse-music {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(107, 23, 40, 0.4);
+        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4);
     }
 
     50% {
         transform: scale(1.05);
-        box-shadow: 0 0 0 8px rgba(107, 23, 40, 0);
+        box-shadow: 0 0 0 8px rgba(255, 204, 0, 0);
     }
 
     100% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(107, 23, 40, 0);
+        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0);
     }
 }
 
@@ -840,14 +840,14 @@ body.dark-mode [class*="bg-[#18181b]"]:hover {
     color: #fff;
     border: none;
     border-radius: 2rem;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     cursor: pointer;
     animation: pulseSom 2s ease-in-out infinite;
-    box-shadow: 0 4px 20px rgba(107, 23, 40, 0.5);
+    box-shadow: 0 4px 20px rgba(255, 204, 0, 0.5);
     transition: background 0.2s, transform 0.2s;
 }
 
@@ -860,11 +860,11 @@ body.dark-mode [class*="bg-[#18181b]"]:hover {
 
     0%,
     100% {
-        box-shadow: 0 4px 20px rgba(107, 23, 40, 0.5);
+        box-shadow: 0 4px 20px rgba(255, 204, 0, 0.5);
     }
 
     50% {
-        box-shadow: 0 4px 30px rgba(107, 23, 40, 0.8);
+        box-shadow: 0 4px 30px rgba(255, 204, 0, 0.8);
     }
 }
 
@@ -934,7 +934,7 @@ body.dark-mode [class*="bg-[#18181b]"]:hover {
     z-index: 10;
     padding: 1.5rem 1.25rem 1rem;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, transparent 100%);
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -954,7 +954,7 @@ body.dark-mode [class*="bg-[#18181b]"]:hover {
     filter: none;
     border-color: var(--brand-main);
     box-shadow:
-        0 0 40px rgba(107, 23, 40, 0.2),
+        0 0 40px rgba(255, 204, 0, 0.2),
         0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
@@ -1080,7 +1080,7 @@ body.dark-mode [class*="bg-[#18181b]"]:hover {
     gap: 1.5rem;
     animation: ticker-anim 80s linear infinite;
     justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -1226,7 +1226,7 @@ body.light-mode .welcome-ticker {
     right: 1rem;
     background: var(--brand-main);
     color: #fff;
-    box-shadow: 0 4px 12px rgba(107, 23, 40, 0.3);
+    box-shadow: 0 4px 12px rgba(255, 204, 0, 0.3);
 }
 
 .text-brand-main {
