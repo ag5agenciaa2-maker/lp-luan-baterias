@@ -108,49 +108,85 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(update);
     }
 
-    // Form Validation & Submission
+    // Redirecionamento WhatsApp - Padrão AG5
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData.entries());
+            // Coleta de dados
+            const nome = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('phone').value;
+            const assunto = document.getElementById('subject').value;
+            const carro = document.getElementById('car').value;
+            const mensagem = document.getElementById('message').value || "Não informado";
             
-            // Simple validation feedback
-            const btn = contactForm.querySelector('button');
-            const originalText = btn.innerText;
+            // Número oficial (conforme link do hero)
+            const numeroWhatsApp = "5521977449687";
             
-            btn.innerText = 'Enviando...';
+            // Estrutura OBRIGATÓRIA da Skill AG5
+            const textoMensagem = `Olá, me chamo ${nome}, vim através do site e gostaria de uma informação.
+
+- E-mail: ${email}
+- Telefone: ${telefone}
+- Assunto/Serviço: ${assunto}
+- Veículo: ${carro}
+- Mensagem/Situação: ${mensagem}`;
+
+            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(textoMensagem)}`;
+            
+            // Feedback visual no botão antes de redirecionar
+            const btn = this.querySelector('button');
+            const originalContent = btn.innerHTML;
             btn.disabled = true;
-
-            // Simulate API call
+            btn.innerHTML = '<span>Redirecionando...</span>';
+            
+            // Pequeno delay para percepção do usuário e então redireciona
             setTimeout(() => {
-                alert(`Obrigado, ${data.name}! Recebemos sua solicitação para o veículo ${data.car}. Entraremos em contato em breve.`);
-                contactForm.reset();
-                btn.innerText = originalText;
+                window.open(urlWhatsApp, '_blank');
                 btn.disabled = false;
-            }, 1500);
+                btn.innerHTML = originalContent;
+                // contactForm.reset(); // Opcional: resetar após envio
+            }, 800);
         });
     }
 
-    // Mobile Menu Toggle (Simplified)
+    // Drawer Mobile (Premium AG5 Pattern)
     const mobileBtn = document.querySelector('.mobile-menu-btn');
-    const navLinks = document.querySelector('.nav-links');
-    
-    if (mobileBtn) {
-        mobileBtn.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'var(--bg-primary)';
-                navLinks.style.padding = '20px';
-                navLinks.style.borderBottom = '1px solid var(--border)';
-            }
-        });
+    const drawerClose = document.querySelector('.drawer-close');
+    const navDrawer = document.getElementById('nav-drawer');
+    const navOverlay = document.getElementById('nav-overlay');
+    const body = document.body;
+
+    function openDrawer() {
+        navDrawer.classList.add('active');
+        navOverlay.classList.add('active');
+        body.classList.add('drawer-open');
     }
+
+    function closeDrawer() {
+        navDrawer.classList.remove('active');
+        navOverlay.classList.remove('active');
+        body.classList.remove('drawer-open');
+    }
+
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', openDrawer);
+    }
+
+    if (drawerClose) {
+        drawerClose.addEventListener('click', closeDrawer);
+    }
+
+    if (navOverlay) {
+        navOverlay.addEventListener('click', closeDrawer);
+    }
+
+    // Fecha ao clicar em links do drawer
+    const drawerLinks = document.querySelectorAll('.drawer-nav a');
+    drawerLinks.forEach(link => {
+        link.addEventListener('click', closeDrawer);
+    });
+
 });

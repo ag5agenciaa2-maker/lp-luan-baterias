@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Allow AI crawlers for GEO (Generative Engine Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+Sitemap: https://www.luanbaterias.ag5agencia.site/sitemap.xml
