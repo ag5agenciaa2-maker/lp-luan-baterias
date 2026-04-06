@@ -147,12 +147,12 @@ img {
 .logo {
     display: flex;
     align-items: center;
-    opacity: 0;
-    animation: fadeIn 0.6s ease-out forwards;
+    /* PageSpeed: removida animação inicial que causava CLS */
+    opacity: 1;
 }
 
 .logo-img {
-    height: 45px;
+    height: 79px; /* PageSpeed: coincide com HTML */
     width: auto;
     object-fit: contain;
 }
@@ -270,7 +270,8 @@ img {
     line-height: 0.9;
     margin-bottom: 20px;
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(10px); /* PageSpeed: reduzido de 40px para diminuir CLS */
+    will-change: transform, opacity;
 }
 
 .hero-subtitle {
@@ -283,7 +284,8 @@ img {
     color: var(--text-primary);
     line-height: 1.6;
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(10px); /* PageSpeed: reduzido de 40px para diminuir CLS */
+    will-change: transform, opacity;
 }
 
 .hero-ctas {
@@ -340,6 +342,7 @@ img {
     font-weight: 900;
     font-size: 1.2rem;
     text-transform: uppercase;
+    min-height: 58px; /* PageSpeed: reserva espaço */
 }
 
 .ticker-track {
@@ -388,7 +391,7 @@ img {
 
 .impact-image img {
     width: 100%;
-    height: 500px;
+    height: 450px; /* PageSpeed: coincide com displays-as */
     object-fit: cover;
     border-left: 5px solid var(--accent);
 }
@@ -470,6 +473,7 @@ img {
 .gallery-item img {
     width: 100%;
     height: 100%;
+    aspect-ratio: 1 / 1; /* PageSpeed: reserva espaço no mobile */
     object-fit: cover;
     transition: 0.6s ease;
 }
