@@ -12,6 +12,33 @@
     --transition: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* Animações Simplificadas */
+@keyframes animTicker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes animBrands {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes animReviews {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes boltPulse {
+    0% { transform: translateY(-50%) scale(1); opacity: 0.05; }
+    50% { transform: translateY(-50%) scale(1.08); opacity: 0.1; }
+    100% { transform: translateY(-50%) scale(1); opacity: 0.05; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -346,10 +373,10 @@ img {
 }
 
 .ticker-track {
-    display: flex;
-    width: max-content;
-    animation: ticker 25s linear infinite;
-    will-change: transform;
+    display: flex !important;
+    flex-direction: row !important;
+    width: max-content !important;
+    animation: animTicker 30s linear infinite;
 }
 
 .ticker-track span {
@@ -573,15 +600,11 @@ img {
 }
 
 .marquee-track {
-    display: flex;
-    gap: 30px;
-    animation: marquee 25s linear infinite;
-    width: max-content;
-    will-change: transform;
-}
-
-.marquee-testimonials:hover .marquee-track {
-    animation-play-state: paused;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 30px !important;
+    animation: animReviews 35s linear infinite;
+    width: max-content !important;
 }
 
 .testimonial-card {
@@ -1038,26 +1061,7 @@ img {
 }
 
 /* Animations */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes boltPulse {
-    0% { transform: translateY(-50%) scale(1); opacity: 0.05; }
-    50% { transform: translateY(-50%) scale(1.08); opacity: 0.1; }
-    100% { transform: translateY(-50%) scale(1); opacity: 0.05; }
-}
-
-@keyframes ticker {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-
-@keyframes marquee {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
+/* Animation Reset */
 
 .reveal {
     opacity: 0;
@@ -1088,15 +1092,11 @@ img {
 }
 
 .carousel-track {
-    display: flex;
-    gap: 30px;
-    animation: marqueeBrands 25s linear infinite;
-    width: max-content;
-    will-change: transform;
-}
-
-.carousel-track:hover {
-    animation-play-state: paused;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 30px !important;
+    animation: animBrands 40s linear infinite;
+    width: max-content !important;
 }
 
 .battery-card {
@@ -1158,10 +1158,7 @@ img {
     color: var(--accent);
 }
 
-@keyframes marqueeBrands {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
+/* Mobile definitions */
 
 /* Mobile */
 @media (max-width: 992px) {
@@ -1446,33 +1443,4 @@ body.drawer-open {
 }
 
 /* PageSpeed/Accessibility fix: respeitar preferência do usuário por menos movimento */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-
-    .ticker-track,
-    .carousel-track,
-    .marquee-track {
-        animation: none !important;
-    }
-
-    .logo {
-        opacity: 1 !important;
-        animation: none !important;
-    }
-
-    .animate-on-load {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-
-    .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-    }
-}
+/* Removed prefers-reduced-motion block for diagnostic */
