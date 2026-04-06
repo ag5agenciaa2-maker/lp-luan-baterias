@@ -348,7 +348,14 @@ img {
 .ticker-track {
     display: flex;
     width: max-content;
-    animation: ticker 40s linear infinite;
+    animation: ticker 25s linear infinite;
+    will-change: transform;
+}
+
+.ticker-track span {
+    flex-shrink: 0;
+    padding-right: 50px;
+    display: inline-block;
 }
 
 /* Split Layout */
@@ -568,7 +575,9 @@ img {
 .marquee-track {
     display: flex;
     gap: 30px;
-    animation: marquee 30s linear infinite;
+    animation: marquee 25s linear infinite;
+    width: max-content;
+    will-change: transform;
 }
 
 .marquee-testimonials:hover .marquee-track {
@@ -580,6 +589,7 @@ img {
     background: var(--bg-primary);
     padding: 30px;
     border: 1px solid var(--border);
+    flex-shrink: 0;
 }
 
 .stars {
@@ -1080,8 +1090,9 @@ img {
 .carousel-track {
     display: flex;
     gap: 30px;
-    animation: marqueeBrands 40s linear infinite;
+    animation: marqueeBrands 25s linear infinite;
     width: max-content;
+    will-change: transform;
 }
 
 .carousel-track:hover {
@@ -1098,6 +1109,7 @@ img {
     justify-content: center;
     min-width: 320px;
     height: 240px;
+    flex-shrink: 0;
     transition: var(--transition);
     position: relative;
     overflow: hidden;
